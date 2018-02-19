@@ -1,8 +1,13 @@
-
 const yearOfBirth = function(age) {
-	let yearOfBirth = 2018 - age;
-	console.log(yearOfBirth);
-
+	try {
+		if (age < 0){
+			throw new Error("Age can not be negative");
+		}
+	} 
+	catch(error) {
+		console.error(error);
+	}
+	return 2018 - age;
 }
 
 const whoAmI = function(name, age){
@@ -13,4 +18,3 @@ const whoAmI = function(name, age){
 whoAmI('Trent', 25);
 
 yearOfBirth(25);
-
